@@ -2,6 +2,10 @@ var player = require('play-sound')(opts = {})
 const fs = require('fs')
 const path = require('path')
 const songs = fs.readdirSync(path.join('/home/sanket/', 'Music'))
+if(!songs.length) {
+	console.error("No songs found in the music directory")
+	process.exit(1)
+}
 let rdm = Math.floor(Math.random() * songs.length)
 let songPath = path.join('/home/sanket/', 'Music', songs[rdm])
 
