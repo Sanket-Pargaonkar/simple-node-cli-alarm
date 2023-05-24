@@ -54,7 +54,7 @@ function getAlarmTicks() {
 		}
 		let hrs = parseInt(splitTime[0])
 		let mins = parseInt(splitTime[1])
-		if (!hrs || !mins) {
+		if (isNaN(hrs)  || isNaN(mins) ) {
 			throw new Error("Unable to parse the alarm time. Please make sure the format is HH:MM and HH, MM are numbers")
 		}
 		let date = new Date()
